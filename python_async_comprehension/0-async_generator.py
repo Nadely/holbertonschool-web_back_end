@@ -9,7 +9,7 @@ import random
 import typing
 
 
-async def async_generator() -> typing.Iterator[float, None, None]:
+async def async_generator() -> typing.Iterator[float]:
     """Use the random module."""
 
     for _ in range(10):
