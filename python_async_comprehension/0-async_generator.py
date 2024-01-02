@@ -10,17 +10,7 @@ import typing
 
 
 async def async_generator() -> typing.List[float]:
-    """
-    Asynchronous generator that yields a random number between 0 and 10 every
-    4 second, for a total of 10 times.
-
-    Yields:
-        float: A random floating-point number between 0 and 10.
-
-    Example:
-        async for num in async_generator():
-            print(num)
-    """
+    """Use the random module."""
 
     for _ in range(10):
         await asyncio.sleep(1)
