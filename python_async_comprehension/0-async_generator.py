@@ -6,10 +6,10 @@ then yield a random number between 0 and 10."""
 
 import asyncio
 import random
-from typing import AsyncIterator
+import typing
 
 
-async def async_generator() -> AsyncIterator[float]:
+async def async_generator() -> typing.List[float]:
     """
     Asynchronous generator that yields a random number between 0 and 10 every
     4 second, for a total of 10 times.
