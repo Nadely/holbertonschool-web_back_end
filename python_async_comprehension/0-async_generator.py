@@ -6,9 +6,10 @@ then yield a random number between 0 and 10."""
 
 import asyncio
 import random
+from typing import AsyncIterator
 
 
-async def async_generator():
+async def async_generator() -> AsyncIterator[float]:
     """Use the random module."""
 
     for _ in range(10):
