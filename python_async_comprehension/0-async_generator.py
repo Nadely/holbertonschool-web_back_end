@@ -11,7 +11,8 @@ from typing import AsyncIterator
 
 async def async_generator() -> AsyncIterator[float]:
     """
-    Asynchronous generator that yields a random number between 0 and 10 every second, for a total of 10 times.
+    Asynchronous generator that yields a random number between 0 and 10 every
+    4 second, for a total of 10 times.
 
     Yields:
         float: A random floating-point number between 0 and 10.
