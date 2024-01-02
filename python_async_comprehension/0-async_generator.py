@@ -10,7 +10,16 @@ from typing import AsyncIterator
 
 
 async def async_generator() -> AsyncIterator[float]:
-    """Use the random module."""
+    """
+    Asynchronous generator that yields a random number between 0 and 10 every second, for a total of 10 times.
+
+    Yields:
+        float: A random floating-point number between 0 and 10.
+
+    Example:
+        async for num in async_generator():
+            print(num)
+    """
 
     for _ in range(10):
         await asyncio.sleep(1)
