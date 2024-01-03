@@ -6,7 +6,6 @@ using asyncio.gather().
 """
 
 import asyncio
-from time import perf_counter
 
 
 async_comprehension = __import__('1-async_comprehension').async_comprehension
@@ -25,7 +24,7 @@ async def measure_runtime() -> float:
     asyncio.gather().
     """
 
-    start_time = perf_counter()
+    start_time = asyncio.get_event_loop().time()
 
     await asyncio.gather(
         async_comprehension(),
@@ -34,6 +33,6 @@ async def measure_runtime() -> float:
         async_comprehension()
     )
 
-    end_time = perf_counter()
+    end_time = asyncio.get_event_loop().time()
 
     return end_time - start_time
