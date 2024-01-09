@@ -30,7 +30,6 @@ class Server:
 
         return self.__dataset
 
-    @staticmethod
     def index_range(page: int= 1, page_size: int= 10) -> tuple:
         """
         Task 0
