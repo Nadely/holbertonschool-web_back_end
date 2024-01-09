@@ -5,8 +5,10 @@ with default value 1 and page_size with default value 10.
 """
 
 import csv
-import math
 from typing import List
+
+
+index_range = __import__('0-simple_helper_function').index_range
 
 
 class Server:
@@ -30,18 +32,6 @@ class Server:
 
         return self.__dataset
 
-    def index_range(page: int= 1, page_size: int= 10) -> tuple:
-        """
-        Task 0
-        """
-
-        assert isinstance(page, int) and page > 0
-        assert isinstance(page_size, int) and page_size > 0
-
-        start = (page - 1) * page_size
-        end = start + page_size
-        return (start, end)
-
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """
         return the appropriate page of the dataset
@@ -50,6 +40,6 @@ class Server:
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
 
-        start, end = self.index_range(page, page_size)
+        start, end = index_range(page, page_size)
 
         return self.dataset()[start:end]
