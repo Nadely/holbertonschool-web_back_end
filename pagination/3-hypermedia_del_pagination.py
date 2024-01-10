@@ -46,7 +46,7 @@ class Server:
         return a dictionary with the following key-value pairs
         """
 
-        start_index = index * page_size if index is not None else 0
+        start_index = index if index is not None else 0
         end_index = start_index + page_size - 1
 
         assert start_index >= 0
