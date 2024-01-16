@@ -1,5 +1,3 @@
-import Currency from './3-currency';
-
 export default class Princing {
   constructor(amount, currency) {
     this._amount = amount;
@@ -23,10 +21,10 @@ export default class Princing {
   }
 
   displayFullPrice() {
-    return `${this._amount} ${this._currency.name} (${this._currency.code})`
+    return `${this._amount} ${this._currency.name} (${this._currency.code})`;
   }
 
   static convertPrice(amount, conversionRate) {
     return amount * conversionRate;
-    }
+  }
 }
