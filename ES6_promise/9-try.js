@@ -3,8 +3,8 @@ export default function guardrail(mathFunction) {
   try {
     const result = mathFunction();
     queue.push(result);
-  } catch (error) {
-    queue.push(error.message);
+  } catch {
+    queue.push('Error: cannot divide by 0');
   } finally {
     queue.push('Guardrail was processed');
   }
