@@ -1,15 +1,14 @@
-import signUpUser from './4-user-promise.js';
-import uploadPhoto from './5-photo-reject.js';
+import signUpUser from './4-user-promise';
+import uploadPhoto from './5-photo-reject';
 
-export default async function handleProfileSignup(firstName, lastName, fileName) {
+const handleProfileSignup = async (firstName, lastName, fileName) => {
   try {
     const user = await signUpUser(firstName, lastName);
-    const photoUpload = await uploadPhoto(fileName);
-    return [
-      { status: 'fulfilled', value: user },
-      { status: 'fulfilled', value: photoUpload }
-    ];
+    await uploadPhoto(fileName);
+    return [{ status: 'fulfilled', value: user }];
   } catch (error) {
     return [{ status: 'rejected', value: error.toString() }];
   }
-}
+};
+
+export default handleProfileSignup;
