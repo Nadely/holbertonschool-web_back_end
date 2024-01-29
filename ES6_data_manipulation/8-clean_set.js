@@ -3,6 +3,23 @@ export default function cleanSet(set, startString) {
     return '';
   }
 
+  let result = '';
+
+  for (const value of set) {
+    if (value.startsWith(startString)) {
+      const cleanedValue = value.slice(startString.length);
+      result += (result === '' ? '' : '-') + cleanedValue;
+    }
+  }
+
+  return result;
+}
+
+/* export default function cleanSet(set, startString) {
+  if (startString === '') {
+    return '';
+  }
+
   return [...set].reduce((result, value) => {
     let newResult = result; // Create a new variable to hold the updated result
     if (value.startsWith(startString)) {
@@ -13,7 +30,7 @@ export default function cleanSet(set, startString) {
     }
     return newResult; // Return the updated result
   }, '');
-}
+} */
 
 /* export default function cleanSet(set, startString) {
   if (startString === '') {
