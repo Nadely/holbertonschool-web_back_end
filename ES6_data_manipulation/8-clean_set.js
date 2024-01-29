@@ -3,6 +3,22 @@ export default function cleanSet(set, startString) {
     return '';
   }
 
+  const resultArray = [];
+
+  set.forEach((value) => {
+    if (value.startsWith(startString)) {
+      resultArray.push(value.slice(startString.length));
+    }
+  });
+
+  return resultArray.join('-');
+}
+
+/* export default function cleanSet(set, startString) {
+  if (startString === '') {
+    return '';
+  }
+
   let result = '';
 
   for (const value of set) {
@@ -13,7 +29,7 @@ export default function cleanSet(set, startString) {
   }
 
   return result;
-}
+}/*
 
 /* export default function cleanSet(set, startString) {
   if (startString === '') {
