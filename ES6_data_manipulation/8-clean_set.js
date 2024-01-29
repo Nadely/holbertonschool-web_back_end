@@ -1,4 +1,18 @@
-/* Test 5 */
+/* Test 6 */
+
+function cleanSetAlternative(set, startString) {
+  if (startString === '') {
+    return '';
+  }
+
+  const cleanedValues = [...set].filter((value) => value.startsWith(startString))
+    .map((cleanedValue) => cleanedValue.slice(startString.length))
+    .join('-');
+
+  return cleanedValues;
+}
+
+/* Test 5
 
 export default function cleanSet(set, startString) {
   if (startString === '') {
@@ -13,6 +27,7 @@ export default function cleanSet(set, startString) {
     return result;
   }, []).join('-');
 }
+*/
 
 /* Test 4
 
