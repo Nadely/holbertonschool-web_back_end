@@ -3,10 +3,7 @@ export default function cleanSet(set, startString) {
     return '';
   }
 
-  const valueClean = [...set]
-    .filter((value) => value.startsWith(startString))
+  return [...set].filter((value) => value.startsWith(startString))
     .map((value) => value.slice(startString.length))
     .join('-');
-
-  return valueClean;
 }
