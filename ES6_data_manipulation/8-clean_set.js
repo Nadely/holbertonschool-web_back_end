@@ -5,8 +5,9 @@ export default function cleanSet(set, startString) {
 
   const valueClean = [...set]
     .filter((value) => value.startsWith(startString))
-    .map((value) => value.slice(startString.length))
-    .join('-');
+    .map((value) => value.slice(startString.length));
 
-  return valueClean;
+  const cleanWithJoin = valueClean.join('-');
+
+  return cleanWithJoin;
 }
