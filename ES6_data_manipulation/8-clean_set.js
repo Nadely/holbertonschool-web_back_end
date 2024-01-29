@@ -1,3 +1,21 @@
+/* Test 5 */
+
+export default function cleanSet(set, startString) {
+  if (startString === '') {
+    return '';
+  }
+
+  return [...set].reduce((result, value) => {
+    if (value.startsWith(startString)) {
+      const cleanedValue = value.slice(startString.length);
+      result.push(cleanedValue);
+    }
+    return result;
+  }, []).join('-');
+}
+
+/* Test 4
+
 export default function cleanSet(set, startString) {
   if (startString === '') {
     return '';
@@ -13,8 +31,11 @@ export default function cleanSet(set, startString) {
 
   return resultArray.join('-');
 }
+*/
 
-/* export default function cleanSet(set, startString) {
+/* Test 3
+
+export default function cleanSet(set, startString) {
   if (startString === '') {
     return '';
   }
@@ -29,9 +50,12 @@ export default function cleanSet(set, startString) {
   }
 
   return result;
-}/*
+}
+/*
 
-/* export default function cleanSet(set, startString) {
+/*Test 2
+
+export default function cleanSet(set, startString) {
   if (startString === '') {
     return '';
   }
@@ -46,9 +70,12 @@ export default function cleanSet(set, startString) {
     }
     return newResult; // Return the updated result
   }, '');
-} */
+}
+*/
 
-/* export default function cleanSet(set, startString) {
+/* Test 1
+
+export default function cleanSet(set, startString) {
   if (startString === '') {
     return '';
   }
@@ -56,4 +83,5 @@ export default function cleanSet(set, startString) {
   return [...set].filter((value) => value.startsWith(startString))
     .map((value) => value.slice(startString.length))
     .join('-');
-} */
+}
+*/
