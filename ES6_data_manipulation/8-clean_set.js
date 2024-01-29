@@ -1,6 +1,6 @@
 /* Test 6 */
 
-export default function cleanSetAlternative(set, startString) {
+export default function cleanSet(set, startString) {
   if (startString === '') {
     return '';
   }
